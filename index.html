@@ -1,0 +1,1063 @@
+
+Viaje verano 2026.html
+
+Página
+1
+/
+1
+100 %
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gran Viaje en Pareja: Colombia & Perú</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Plus+Jakarta+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        :root {
+            --bg-color: #f7f9fc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --primary-colombia: #0284c7;
+            --primary-peru: #e11d48;
+            --accent-gold: #d97706;
+            --border-color: #e2e8f0;
+            --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.05), 0 2px 4px -2px rgb(0 0 0 / 0.05);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.05), 0 4px 6px -4px rgb(0 0 0 / 0.05);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding: 0;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 700;
+        }
+
+        /* HEADER & HERO */
+        .hero {
+            background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: url('https://images.unsplash.com/photo-1596587328696-3597107bf4ec?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+            opacity: 0.15;
+            pointer-events: none;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+            letter-spacing: -1px;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: #93c5fd;
+            font-weight: 300;
+            max-width: 600px;
+            margin: 0 auto 30px;
+        }
+
+        .badge-container {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .country-badge {
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .country-badge.co { color: #38bdf8; }
+        .country-badge.pe { color: #fb7185; }
+
+        /* CONTAINER AND LAYOUT */
+        .wrapper {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 320px 1fr;
+            gap: 40px;
+        }
+
+        @media (max-width: 968px) {
+            .wrapper {
+                grid-template-columns: 1fr;
+            }
+            .sidebar {
+                position: static !important;
+            }
+        }
+
+        /* SIDEBAR / NAVIGATION */
+        .sidebar {
+            position: sticky;
+            top: 40px;
+            height: fit-content;
+        }
+
+        .hotel-card {
+            background: var(--card-bg);
+            border-radius: 16px;
+            padding: 24px;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border-color);
+            margin-bottom: 24px;
+        }
+
+        .hotel-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--accent-gold);
+        }
+
+        .hotel-link-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            width: 100%;
+            padding: 12px;
+            background: #10b981;
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 10px;
+            transition: background 0.2s;
+            margin-top: 10px;
+            font-size: 0.9rem;
+        }
+
+        .hotel-link-btn:hover {
+            background: #059669;
+        }
+
+        .nav-box {
+            background: var(--card-bg);
+            border-radius: 16px;
+            padding: 24px;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border-color);
+        }
+
+        .nav-box h3 {
+            font-size: 1.2rem;
+            margin-bottom: 16px;
+            color: var(--text-main);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 8px;
+        }
+
+        .nav-list {
+            list-style: none;
+        }
+
+        .nav-item {
+            margin-bottom: 12px;
+        }
+
+        .nav-link {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: var(--text-muted);
+            font-weight: 500;
+            font-size: 0.95rem;
+            padding: 8px 12px;
+            border-radius: 8px;
+            transition: all 0.2s;
+        }
+
+        .nav-link:hover {
+            background: #f1f5f9;
+            color: var(--text-main);
+        }
+
+        .nav-link.active-co {
+            background: #e0f2fe;
+            color: #0369a1;
+            font-weight: 600;
+        }
+
+        .nav-link.active-pe {
+            background: #ffe4e6;
+            color: #b91c1c;
+            font-weight: 600;
+        }
+
+        /* MAIN CONTENT & TIMELINE */
+        .main-content {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            margin-bottom: 24px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid transparent;
+        }
+
+        .co-block .section-title { color: var(--primary-colombia); border-image: linear-gradient(to right, var(--primary-colombia), transparent) 1; }
+        .pe-block .section-title { color: var(--primary-peru); border-image: linear-gradient(to right, var(--primary-peru), transparent) 1; }
+
+        .day-card {
+            background: var(--card-bg);
+            border-radius: 16px;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border-color);
+            margin-bottom: 24px;
+            overflow: hidden;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .day-card:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .day-header {
+            padding: 20px 24px;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .co-block .day-header { background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%); }
+        .pe-block .day-header { background: linear-gradient(135deg, #e11d48 0%, #be123c 100%); }
+
+        .day-title {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .day-number {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 4px 12px;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .day-date {
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+
+        .day-badge {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 6px 14px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .day-body {
+            padding: 24px;
+        }
+
+        .visual-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        @media (max-width: 640px) {
+            .visual-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .image-box, .map-box {
+            border-radius: 12px;
+            height: 200px;
+            overflow: hidden;
+            position: relative;
+            border: 1px solid var(--border-color);
+        }
+
+        .image-box img, .map-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .visual-label {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            background: rgba(15, 23, 42, 0.75);
+            color: white;
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            backdrop-filter: blur(4px);
+        }
+
+        /* INFO BOXES */
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 16px;
+            margin-bottom: 16px;
+        }
+
+        .info-pill {
+            background: #f8fafc;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 16px;
+            display: flex;
+            gap: 12px;
+            align-items: flex-start;
+        }
+
+        .info-pill i {
+            font-size: 1.2rem;
+            margin-top: 2px;
+        }
+
+        .co-block .info-pill i { color: var(--primary-colombia); }
+        .pe-block .info-pill i { color: var(--primary-peru); }
+
+        .info-pill-title {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            font-weight: 700;
+            color: var(--text-muted);
+            margin-bottom: 2px;
+            letter-spacing: 0.5px;
+        }
+
+        .info-pill-text {
+            font-size: 0.95rem;
+            color: var(--text-main);
+            font-weight: 500;
+        }
+
+        .plan-box {
+            background: #fffbeb;
+            border-left: 4px solid var(--accent-gold);
+            padding: 16px;
+            border-radius: 0 12px 12px 0;
+            margin-top: 16px;
+        }
+
+        .plan-box-title {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: #b45309;
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .plan-box-text {
+            font-size: 0.95rem;
+            color: #78350f;
+        }
+
+        .warning-box {
+            background: #fef2f2;
+            border-left: 4px solid #ef4444;
+            padding: 16px;
+            border-radius: 0 12px 12px 0;
+            margin-top: 16px;
+        }
+
+        .warning-box-title {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: #b91c1c;
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .warning-box-text {
+            font-size: 0.95rem;
+            color: #7f1d1d;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="hero">
+        <h1>El Gran Viaje</h1>
+        <p>Aventura Romántica de 27 Días por Colombia y Perú</p>
+        <div class="badge-container">
+            <div class="country-badge co"><i class="fa-solid fa-cloud-sun"></i> 3 - 19 Jul | Colombia</div>
+            <div class="country-badge pe"><i class="fa-solid fa-mountain-sun"></i> 20 - 29 Jul | Perú</div>
+        </div>
+    </div>
+
+    <div class="wrapper">
+        
+        <div class="sidebar">
+            <div class="hotel-card">
+                <h3><i class="fa-solid fa-bookmark"></i> Reserva Confirmada</h3>
+                <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 8px;"><strong>Alojamiento:</strong> Viajeros Hostel</p>
+                <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 12px;"><strong>Fechas:</strong> 14 Jul - 15 Jul (Parque Tayrona)</p>
+                <a href="https://hotels.cloudbeds.com/es/reservation/8Ua0ky?checkin=2026-07-14&checkout=2026-07-15&currency=eur" target="_blank" class="hotel-link-btn">
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i> Ver en Cloudbeds
+                </a>
+            </div>
+
+            <div class="nav-box">
+                <h3><i class="fa-solid fa-map-location-dot"></i> Bloques de Ruta</h3>
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="#b1" class="nav-link active-co"><i class="fa-solid fa-building-columns"></i> B1: Bogotá</a></li>
+                    <li class="nav-item"><a href="#b2" class="nav-link active-co"><i class="fa-solid fa-mug-hot"></i> B2: Eje Cafetero</a></li>
+                    <li class="nav-item"><a href="#b3" class="nav-link active-co"><i class="fa-solid fa-city"></i> B3: Guatapé & Medellín</a></li>
+                    <li class="nav-item"><a href="#b4" class="nav-link active-co"><i class="fa-solid fa-tree"></i> B4: Parque Tayrona</a></li>
+                    <li class="nav-item"><a href="#b5" class="nav-link active-co"><i class="fa-solid fa-ship"></i> B5: Cartagena de Indias</a></li>
+                    <li class="nav-item"><a href="#pe1" class="nav-link active-pe"><i class="fa-solid fa-train"></i> P1: Machu Picchu & Cusco</a></li>
+                    <li class="nav-item"><a href="#pe2" class="nav-link active-pe"><i class="fa-solid fa-shrimp"></i> P2: Lima & Regreso</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="main-content">
+            
+            <div class="co-block" id="b1">
+                <h2 class="section-title"><i class="fa-solid fa-building-columns"></i> Bloque 1: Historia, Altura y Cultura (Bogotá)</h2>
+                
+                <div class="day-card">
+                    <div class="day-header">
+                        <div class="day-title">
+                            <span class="day-number">Día 1</span>
+                            <span class="day-date">3 de Julio: Llegada a Bogotá</span>
+                        </div>
+                        <div class="day-badge"><i class="fa-solid fa-plane-arrival"></i> Bienvenida</div>
+                    </div>
+                    <div class="day-body">
+                        <div class="info-grid">
+                            <div class="info-pill">
+                                <i class="fa-solid fa-taxi"></i>
+                                <div>
+                                    <div class="info-pill-title">Transporte</div>
+                                    <div class="info-pill-text">Taxi Oficial en fila de aeropuerto o Uber/Cabify desde Salidas.</div>
+                                </div>
+                            </div>
+                            <div class="info-pill">
+                                <i class="fa-solid fa-clock"></i>
+                                <div>
+                                    <div class="info-pill-title">Tiempo Estimado</div>
+                                    <div class="info-pill-text">30 a 50 min hasta La Candelaria (Tráfico denso a las 15:40).</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="plan-box">
+                            <div class="plan-box-title"><i class="fa-solid fa-calendar-day"></i> Plan Recomendado</div>
+                            <div class="plan-box-text">Check-in, cena romántica y tranquila en La Candelaria. Importante descansar para aclimatarse con calma a los 2.600 metros de altura.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="day-card">
+                    <div class="day-header">
+                        <div class="day-title">
+                            <span class="day-number">Día 2</span>
+                            <span class="day-date">4 de Julio: Bogotá Esencial</span>
+                        </div>
+                        <div class="day-badge"><i class="fa-solid fa-camera"></i> Cultura</div>
+                    </div>
+                    <div class="day-body">
+                        <div class="plan-box">
+                            <div class="plan-box-title"><i class="fa-solid fa-map-pin"></i> Recorrido del Día</div>
+                            <div class="plan-box-text">Mañana cultural imperdible visitando el <strong>Museo del Oro</strong> y el <strong>Museo Botero</strong> (ambos hermosos y muy próximos). Al atardecer, subid en teleférico o funicular a <strong>Monserrate</strong> para ver el atardecer y las vistas espectaculares de la ciudad iluminada.</div>
+                        </div>
+                        <div class="warning-box">
+                            <div class="warning-box-title"><i class="fa-solid fa-temperature-quarter"></i> Tip de Clima</div>
+                            <div class="warning-box-text">Llevad una buena chaqueta o abrigo para Monserrate; al caer la noche refresca considerablemente en las alturas.</div>
+                        </div>
+                        <div class="visual-container">
+                            <div class="image-box">
+                                <img src="https://images.unsplash.com/photo-1596587328696-3597107bf4ec?auto=format&fit=crop&w=500&q=80" alt="Monserrate Bogotá">
+                                <div class="visual-label">Cerro de Monserrate</div>
+                            </div>
+                            <div class="map-box">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Bogot%C3%A1_Candelaria_Street.jpg/640px-Bogot%C3%A1_Candelaria_Street.jpg" alt="La Candelaria">
+                                <div class="visual-label">Barrio La Candelaria</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="co-block" id="b2">
+                <h2 class="section-title"><i class="fa-solid fa-mug-hot"></i> Bloque 2: Paisajes e Inmersión Cafetera</h2>
+
+                <div class="day-card">
+                    <div class="day-header">
+                        <div class="day-title">
+                            <span class="day-number">Día 3</span>
+                            <span class="day-date">5 de Julio: Bogotá ✈️ Eje Cafetero</span>
+                        </div>
+                        <div class="day-badge"><i class="fa-solid fa-plane"></i> Vuelo Interno</div>
+                    </div>
+                    <div class="day-body">
+                        <div class="info-grid">
+                            <div class="info-pill">
+                                <i class="fa-solid fa-plane-departure"></i>
+                                <div>
+                                    <div class="info-pill-title">Desplazamiento</div>
+                                    <div class="info-pill-text">Vuelo temprano desde Bogotá (BOG) hacia Pereira (PEI) o Armenia (AXM).</div>
+                                </div>
+                            </div>
+                            <div class="info-pill">
+                                <i class="fa-solid fa-route"></i>
+                                <div>
+                                    <div class="info-pill-title">Logística a Salento</div>
+                                    <div class="info-pill-text">Taxi privado (directo y cómodo) o autobús local desde la terminal de Pereira.</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="plan-box">
+                            <div class="plan-box-title"><i class="fa-solid fa-location-dot"></i> Tarde en Salento</div>
+                            <div class="plan-box-text">Pasear por las coloridas calles llenas de artesanías, subir al mirador del pueblo y disfrutar de una excelente trucha tradicional en la plaza principal.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="day-card">
+                    <div class="day-header">
+                        <div class="day-title">
+                            <span class="day-number">Día 4</span>
+                            <span class="day-date">6 de Julio: El Valle de Cocora</span>
+                        </div>
+                        <div class="day-badge"><i class="fa-solid fa-mountain"></i> Naturaleza pura</div>
+                    </div>
+                    <div class="day-body">
+                        <div class="plan-box">
+                            <div class="plan-box-title"><i class="fa-solid fa-person-hiking"></i> Senderismo Matutino</div>
+                            <div class="plan-box-text">Hacer senderismo entre las icónicas palmas de cera gigantes, las más altas del mundo. Por la tarde, regreso al pueblo para tomar un gran café especial y relajarse en pareja.</div>
+                        </div>
+                        <div class="visual-container">
+                            <div class="image-box">
+                                <img src="https://images.unsplash.com/photo-1589981881261-26798e4d8fb8?auto=format&fit=crop&w=500&q=80" alt="Valle de Cocora">
+                                <div class="visual-label">Palmas de Cera</div>
+                            </div>
+                            <div class="image-box">
+                                <img src="https://images.unsplash.com/photo-1590001155093-a3c66ab0c3ff?auto=format&fit=crop&w=500&q=80" alt="Salento">
+                                <div class="visual-label">Casas de Salento</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="day-card">
+                    <div class="day-header">
+                        <div class="day-title">
+                            <span class="day-number">Día 5</span>
+                            <span class="day-date">7 de Julio: Finca Cafetera Tradicional</span>
+                        </div>
+                        <div class="day-badge"><i class="fa-solid fa-seedling"></i> Experiencia</div>
+                    </div>
+                    <div class="day-body">
+                        <div class="plan-box">
+                            <div class="plan-box-title"><i class="fa-solid fa-graduation-cap"></i> Tour del Café</div>
+                            <div class="plan-box-text">Realizar un tour interactivo del café en una finca tradicional de renombre (Finca El Ocaso o Las Acacias). Aprenderéis todo el proceso artesanal, desde la recolección de la semilla hasta la cata de la taza perfecta.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="co-block" id="b3">
+                <h2 class="section-title"><i class="fa-solid fa-city"></i> Bloque 3: Innovación, Ritmo y Noche en Guatapé</h2>
+
+                <div class="day-card">
+                    <div class="day-header">
+                        <div class="day-title">
+                            <span class="day-number">Día 6</span>
+                            <span class="day-date">8 de Julio: Eje Cafetero ✈️ Guatapé</span>
+                        </div>
+                        <div class="day-badge" style="background:#d97706;"><i class="fa-solid fa-arrows-spin"></i> ¡Optimizado!</div>
+                    </div>
+                    <div class="day-body">
+                        <div class="info-grid">
+                            <div class="info-pill">
+                                <i class="fa-solid fa-plane-up"></i>
+                                <div>
+                                    <div class="info-pill-title">Vuelo Directo</div>
+                                    <div class="info-pill-text">Vuelo por la mañana desde Pereira (PEI) al aeropuerto de Rionegro-Medellín (MDE).</div>
+                                </div>
+                            </div>
+                            <div class="info-pill">
+                                <i class="fa-solid fa-bolt"></i>
+                                <div>
+                                    <div class="info-pill-title">Ahorro de Tiempo</div>
+                                    <div class="info-pill-text">Al estar el aeropuerto en Rionegro, se toma un transfer directo a Guatapé (1h 15m) sin bajar a Medellín.</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="plan-box">
+                            <div class="plan-box-title"><i class="fa-solid fa-heart"></i> Romance Nocturno</div>
+                            <div class="plan-box-text">Check-in en vuestro hotel o glamping con vistas al embalse. Pasead por el hermoso pueblo de los zócalos de colores sin las aglomeraciones del turismo de día y disfrutad de una romántica cena junto al agua.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="day-card">
+                    <div class="day-header">
+                        <div class="day-title">
+                            <span class="day-number">Día 7</span>
+                            <span class="day-date">9 de Julio: Piedra del Peñol ➔ Medellín</span>
+                        </div>
+                        <div class="day-badge"><i class="fa-solid fa-stairs"></i> Reto</div>
+                    </div>
+                    <div class="day-body">
+                        <div class="plan-box">
+                            <div class="plan-box-title"><i class="fa-solid fa-sun"></i> Madrugón Clave</div>
+                            <div class="plan-box-text">Subid a primera hora los 700 escalones de la imponente <strong>Piedra del Peñol</strong> antes de que apriete el sol y lleguen los tours desde Medellín. Las panorámicas matutinas del embalse son brutales.</div>
+                        </div>
+                        <div class="info-pill" style="margin-top: 15px;">
+                            <i class="fa-solid fa-bus"></i>
+                            <div>
+                                <div class="info-pill-title">Traslado de Tarde</div>
+                                <div class="info-pill-text">Después de comer, bus local o taxi privado hacia vuestro hotel en Medellín (aprox. 2 horas). Check-in en El Poblado o Laureles.</div>
+                            </div>
+                        </div>
+                        <div class="visual-container">
+                            <div class="image-box">
+                                <img src="https://images.unsplash.com/photo-1544913716-df2df5514f77?auto=format&fit=crop&w=500&q=80" alt="Peñol">
+                                <div class="visual-label">La Piedra del Peñol</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="day-card">
+                    <div class="day-header">
+                        <div class="day-title">
+                            <span class="day-number">Días 8 - 9</span>
+                            <span class="day-date">10 - 11 de Julio: Explorando Medellín</span>
+                        </div>
+                        <div class="day-badge"><i class="fa-solid fa-sparkles"></i> Ciudad</div>
+                    </div>
+                    <div class="day-body">
+                        <p><strong>10 de Julio:</strong> Dedicad el día a conocer la transformación de la ciudad. Podéis visitar la Plaza Botero, el Metrocable y recorrer el centro.</p>
+                        <p style="margin-top: 10px;"><strong>11 de Julio (Medellín de Autor):</strong> Disfrutad del gran ambiente urbano. Visitad el Jardín Botánico, el Museo de Arte Moderno (MAMM) y salid a cenar y tomar cócteles de autor por la vibrante zona de <strong>Provenza (El Poblado)</strong>.</p>
+                    </div>
+                </div>
+
+                <div class="day-card">
+                    <div class="day-header">
+                        <div class="day-title">
+                            <span class="day-number">Día 10</span>
+                            <span class="day-date">12 de Julio: Mañana en Medellín & Salto al Caribe</span>
+                        </div>
+                        <div class="day-badge"><i class="fa-solid fa-plane-departure"></i> Transición</div>
+                    </div>
+                    <div class="day-body">
+                        <p>Aprovechad la mañana para compras de última hora, pasear por los cafés de especialidad de Laureles y organizar mochilas.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="co-block" id="b4">
+                <h2 class="section-title"><i class="fa-solid fa-tree"></i> Bloque 4: Selva Tropical y Mar (Parque Tayrona)</h2>
+
+                <div class="day-card">
+                    <div class="day-header">
+                        <div class="day-title">
+                            <span class="day-number">Día 10 (Cont.)</span>
+                            <span class="day-date">12 de Julio: Llegada a Santa Marta</span>
+                        </div>
+                        <div class="day-badge"><i class="fa-solid fa-umbrella-beach"></i> Caribe</div>
+                    </div>
+                    <div class="day-body">
+                        <div class="info-grid">
+                            <div class="info-pill">
+                                <i class="fa-solid fa-plane"></i>
+                                <div>
+                                    <div class="info-pill-title">Vuelo</div>
+                                    <div class="info-pill-text">Vuelo directo Medellín (MDE) ➔ Santa Marta (SMR).</div>
+                                </div>
+                            </div>
+                            <div class="info-pill">
+                                <i class="fa-solid fa-taxi"></i>
+                                <div>
+                                    <div class="info-pill-title">Enlace Tayrona</div>
+                                    <div class="info-pill-text">Desde el aeropuerto al hotel en la zona de El Zaino son unos 45-60 min en taxi.</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="day-card">
+                    <div class="day-header">
+                        <div class="day-title">
+                            <span class="day-number">Días 11 - 13</span>
+                            <span class="day-date">13 - 15 de Julio: Desconexión Absoluta en Tayrona</span>
+                        </div>
+                        <div class="day-badge"><i class="fa-solid fa-shuttle-space"></i> Salvaje</div>
+                    </div>
+                    <div class="day-body">
+                        <p>Días dedicados a vivir el Caribe salvaje en pareja. Espectacular trekking tropical desde la entrada del sector <strong>El Zaino</strong> cruzando senderos entre jungla y palmeras.</p>
+                        <p style="margin-top: 10px;">Caminad hasta la famosísima playa de <strong>Cabo San Juan</strong> (2-3 horas de ruta). El contraste de la vegetación verde con el azul profundo del mar es una locura.</p>
+                        <div class="warning-box">
+                            <div class="warning-box-title"><i class="fa-solid fa-kit-medical"></i> Esenciales para la Selva</div>
+                            <div class="warning-box-text">Llevad abundante repelente de mosquitos fuerte, protector solar de alta graduación, calzado cómodo de trekking y agua suficiente.</div>
+                        </div>
+                        <div class="visual-container">
+                            <div class="image-box">
+                                <img src="https://images.unsplash.com/photo-1620215715830-4e32049e001c?auto=format&fit=crop&w=500&q=80" alt="Tayrona">
+                                <div class="visual-label">Cabo San Juan (Tayrona)</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="co-block" id="b5">
+                <h2 class="section-title"><i class="fa-solid fa-ship"></i> Bloque 5: El Romance Colonial (Cartagena de Indias)</h2>
+
+                <div class="day-card">
+                    <div class="day-header">
+                        <div class="day-title">
+                            <span class="day-number">Día 14</span>
+                            <span class="day-date">16 de Julio: Santa Marta 🚌 Cartagena</span>
+                        </div>
+                        <div class="day-badge"><i class="fa-solid fa-bus"></i> Shuttle</div>
+                    </div>
+                    <div class="day-body">
+                        <div class="info-grid">
+                            <div class="info-pill">
+                                <i class="fa-solid fa-van-shuttle"></i>
+                                <div>
+                                    <div class="info-pill-title">Transporte Puerta a Puerta</div>
+                                    <div class="info-pill-text">Servicio con Marsol o Berlinas. Os recogen en el punto acordado y os dejan en el hotel de Cartagena.</div>
+                                </div>
+                            </div>
+                            <div class="info-pill">
+                                <i class="fa-solid fa-clock"></i>
+                                <div>
+                                    <div class="info-pill-title">Duración del Viaje</div>
+                                    <div class="info-pill-text">Aproximadamente 4.5 a 5 horas bordeando toda la costa caribeña.</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="plan-box">
+                            <div class="plan-box-title"><i class="fa-solid fa-moon"></i> Noche Colonial</div>
+                            <div class="plan-box-text">Llegada por la tarde. Primer contacto mágico paseando por el interior de la Ciudad Amurallada y cenando bajo la tenue luz de los faroles antiguos.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="day-card">
+                    <div class="day-header">
+                        <div class="day-title">
+                            <span class="day-number">Día 15</span>
+                            <span class="day-date">17 de Julio: Cartagena Colonial y Getsemaní</span>
+                        </div>
+                        <div class="day-badge"><i class="fa-solid fa-heart"></i> Romance</div>
+                    </div>
+                    <div class="day-body">
+                        <div class="plan-box">
+                            <div class="plan-box-title"><i class="fa-solid fa-map"></i> Ruta del Día</div>
+                            <div class="plan-box-text">Madrugad para recorrer las históricas murallas y el imponente Castillo de San Felipe. Por la tarde, cruzad al bohemio barrio de <strong>Getsemaní</strong>, rebosante de arte urbano, buganvillas y música en directo en la Plaza de la Trinidad. Ver el atardecer desde el mítico <strong>Café del Mar</strong> es obligatorio.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="day-card">
+                    <div class="day-header">
+                        <div class="day-title">
+                            <span class="day-number">Día 16</span>
+                            <span class="day-date">18 de Julio: Día de Playa en Islas del Rosario</span>
+                        </div>
+                        <div class="day-badge"><i class="fa-solid fa-ship"></i> Excursión</div>
+                    </div>
+                    <div class="day-body">
+                        <div class="plan-box">
+                            <div class="plan-box-title"><i class="fa-solid fa-water"></i> Paraíso de Cristal</div>
+                            <div class="plan-box-text">Cartagena no destaca por sus playas urbanas, así que lo ideal es reservar una excursión de un día en lancha rápida hacia las <strong>Islas del Rosario</strong>. Disfrutad de un exclusivo club de playa privado (como Bora Bora o Isla Bela) con arenas blancas y aguas turquesas.</div>
+                        </div>
+                        <div class="visual-container">
+                            <div class="image-box">
+                                <img src="https://images.unsplash.com/photo-1548574505-5e239809ee19?auto=format&fit=crop&w=500&q=80" alt="Cartagena">
+                                <div class="visual-label">Calles de Cartagena</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="day-card">
+                    <div class="day-header">
+                        <div class="day-title">
+                            <span class="day-number">Día 17</span>
+                            <span class="day-date">19 de Julio: Logística de Seguridad y Regreso a Bogotá</span>
+                        </div>
+                        <div class="day-badge" style="background:#dc2626;"><i class="fa-solid fa-shield-halved"></i> Alerta Crítica</div>
+                    </div>
+                    <div class="day-body">
+                        <p>Últimas compras de souvenirs en Las Bóvedas por la mañana.</p>
+                        <div class="warning-box">
+                            <div class="warning-box-title"><i class="fa-solid fa-triangle-exclamation"></i> Recomendación de Seguridad</div>
+                            <div class="warning-box-text"><strong>Volad a Bogotá esta tarde/noche y dormid en un hotel pegado al aeropuerto (El Dorado).</strong> El clima de Bogotá suele generar densas nieblas matutinas que retrasan vuelos domésticos; volar el mismo 20 por la mañana es un riesgo inmenso para vuestro vuelo internacional.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pe-block" id="pe1">
+                <h2 class="section-title"><i class="fa-solid fa-train"></i> Bloque 6: El Salto a los Andes (Machu Picchu & Cusco)</h2>
+
+                <div class="day-card">
+                    <div class="day-header">
+                        <div class="day-title">
+                            <span class="day-number">Día 18</span>
+                            <span class="day-date">20 de Julio: Gran Enlace Colombia ➔ Perú</span>
+                        </div>
+                        <div class="day-badge"><i class="fa-solid fa-plane-up"></i> Doble Vuelo</div>
+                    </div>
+                    <div class="day-body">
+                        <div class="info-grid">
+                            <div class="info-pill">
+                                <i class="fa-solid fa-plane"></i>
+                                <div>
+                                    <div class="info-pill-title">Vuelo 1</div>
+                                    <div class="info-pill-text"><strong>Bogotá - Lima</strong><br>11:55 - 15:00</div>
+                                </div>
+                            </div>
+                            <div class="info-pill">
+                                <i class="fa-solid fa-plane"></i>
+                                <div>
+                                    <div class="info-pill-title">Vuelo 2</div>
+                                    <div class="info-pill-text"><strong>Lima - Cusco</strong><br>20:30 - 21:55</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="plan-box" style="background:#fef2f2; border-left-color:#ef4444;">
+                            <div class="plan-box-title" style="color:#b91c1c;"><i class="fa-solid fa-bed"></i> Alojamiento Cusco</div>
+                            <div class="plan-box-text" style="color:#7f1d1d;"><strong>Principe III</strong> (Muy cerca de la estación de tren Wanchaq). Precio: 24€ con desayuno buffet. Pago directo en el establecimiento.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="day-card">
+                    <div class="day-header">
+                        <div class="day-title">
+                            <span class="day-number">Día 19</span>
+                            <span class="day-date">21 de Julio: Tren Hacia Aguas Calientes</span>
+                        </div>
+                        <div class="day-badge"><i class="fa-solid fa-train"></i> Expedición</div>
+                    </div>
+                    <div class="day-body">
+                        <div class="info-grid">
+                            <div class="info-pill">
+                                <i class="fa-solid fa-clock"></i>
+                                <div>
+                                    <div class="info-pill-title">Horarios de Tren</div>
+                                    <div class="info-pill-text">Salida de Wanchaq a las 12:30 ➔ Transbordo en Ollantaytambo (15:00) ➔ Llegada a Aguas Calientes a las 17:02.</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="plan-box">
+                            <div class="plan-box-title"><i class="fa-solid fa-utensils"></i> Recomendación de Cena</div>
+                            <div class="plan-box-text">Id a cenar fuerte al restaurante <strong>Indio Feliz</strong> en Aguas Calientes para cargar las energías a tope de cara al día siguiente.</div>
+                        </div>
+                        <p style="margin-top:15px; font-weight:600; font-size:0.95rem; color:var(--primary-peru);"><i class="fa-solid fa-hotel"></i> Noche en Aguas Calientes: Samananchis Machupicchu.</p>
+                    </div>
+                </div>
+
+                <div class="day-card">
+                    <div class="day-header">
+                        <div class="day-title">
+                            <span class="day-number">Día 20</span>
+                            <span class="day-date">22 de Julio: El Día Mágico (Machu Picchu)</span>
+                        </div>
+                        <div class="day-badge" style="background:#b45309;"><i class="fa-solid fa-crown"></i> Imprescindible</div>
+                    </div>
+                    <div class="day-body">
+                        <div class="warning-box" style="background:#fffbeb; border-left-color:#d97706;">
+                            <div class="warning-box-title" style="color:#b45309;"><i class="fa-solid fa-ticket"></i> Acceso Temprano</div>
+                            <div class="warning-box-text" style="color:#78350f;"><strong>Entrada a la ciudadela de Machu Picchu a las 06:00 AM.</strong> Disfrutad de la maravilla del mundo con los primeros rayos de luz.</div>
+                        </div>
+                        <p style="margin-top:15px;">Tras la visita, la bajada en autobús al pueblo toma unos 30 min. Almorzad tarde y con calma en <strong>Full House</strong> o <strong>Toto’s House</strong> (gran buffet frente al río) para relajaros plenamente.</p>
+                        <div class="info-pill" style="margin-top:15px;">
+                            <i class="fa-solid fa-train"></i>
+                            <div>
+                                <div class="info-pill-title">Tren de Regreso</div>
+                                <div class="info-pill-text">Tren desde Aguas Calientes a las 15:20 ➔ Llegada a Ollantaytambo a las 17:10.</div>
+                            </div>
+                        </div>
+                        <p style="margin-top:15px; font-weight:600; font-size:0.95rem; color:var(--primary-peru);"><i class="fa-solid fa-hotel"></i> Noche en Ollantaytambo: Hostal Apu Qhawarina (19€, pago allí).</p>
+                        <div class="visual-container">
+                            <div class="image-box">
+                                <img src="https://images.unsplash.com/photo-1587595431973-160d0d94adb1?auto=format&fit=crop&w=500&q=80" alt="Machu Picchu">
+                                <div class="visual-label">Machu Picchu</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="day-card">
+                    <div class="day-header">
+                        <div class="day-title">
+                            <span class="day-number">Día 21</span>
+                            <span class="day-date">23 de Julio: Valle Sagrado ➔ Cusco</span>
+                        </div>
+                        <div class="day-badge"><i class="fa-solid fa-mound"></i> Historia</div>
+                    </div>
+                    <div class="day-body">
+                        <div class="plan-box">
+                            <div class="plan-box-title"><i class="fa-solid fa-map-route"></i> Excursión Arqueológica</div>
+                            <div class="plan-box-text">Día para recorrer las impresionantes ruinas del <strong>Valle Sagrado</strong> contratando un tour guiado con una agencia local en Ollantaytambo. Por la tarde/noche, regreso definitivo a la majestuosa ciudad de Cusco.</div>
+                        </div>
+                        <p style="margin-top:15px; font-weight:600; font-size:0.95rem; color:var(--primary-peru);"><i class="fa-solid fa-hotel"></i> Noche en Cusco: Principe III (Base para las próximas 4 noches, 95€ por estancia con desayuno buffet).</p>
+                    </div>
+                </div>
+
+                <div class="day-card">
+                    <div class="day-header">
+                        <div class="day-title">
+                            <span class="day-number">Días 22 - 24</span>
+                            <span class="day-date">24 - 26 de Julio: Capital Inca (Cusco)</span>
+                        </div>
+                        <div class="day-badge"><i class="fa-solid fa-gem"></i> Estancia</div>
+                    </div>
+                    <div class="day-body">
+                        <p>Días libres para perderse por las fascinantes calles empedradas de Cusco, visitar la Plaza de Armas, el bohemio barrio de San Blas, el mercado de San Pedro y yacimientos cercanos como Sacsayhuamán. Disfrutad de la espectacular gastronomía andina.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pe-block" id="pe2">
+                <h2 class="section-title"><i class="fa-solid fa-shrimp"></i> Bloque 7: Capital Gastronómica y Retorno (Lima ➔ España)</h2>
+
+                <div class="day-card">
+                    <div class="day-header">
+                        <div class="day-title">
+                            <span class="day-number">Día 25</span>
+                            <span class="day-date">27 de Julio: Vuelo Cusco ✈️ Lima</span>
+                        </div>
+                        <div class="day-badge"><i class="fa-solid fa-plane"></i> Enlace Costa</div>
+                    </div>
+                    <div class="day-body">
+                        <div class="info-grid">
+                            <div class="info-pill">
+                                <i class="fa-solid fa-plane-departure"></i>
+                                <div>
+                                    <div class="info-pill-title">Vuelo Doméstico</div>
+                                    <div class="info-pill-text">Vuelo Cusco - Lima de las 11:40, aterrizando a las 13:20.</div>
+                                </div>
+                            </div>
+                        </div>
+                        <p style="margin-top:15px; font-weight:600; font-size:0.95rem; color:var(--primary-peru);"><i class="fa-solid fa-hotel"></i> Noche en Lima: La Casona Azul (Distrito turístico y seguro de Miraflores. Coste: 69€ con desayuno incluido, se paga en el lugar).</p>
+                    </div>
+                </div>
+
+                <div class="day-card">
+                    <div class="day-header">
+                        <div class="day-title">
+                            <span class="day-number">Día 26</span>
+                            <span class="day-date">28 de Julio: Lima Gastronómica</span>
+                        </div>
+                        <div class="day-badge"><i class="fa-solid fa-shrimp"></i> Gourmet</div>
+                    </div>
+                    <div class="day-body">
+                        <div class="plan-box">
+                            <div class="plan-box-title"><i class="fa-solid fa-utensils"></i> Plan de Sabores</div>
+                            <div class="plan-box-text">Día completo en Lima. Dad un paseo por el Malecón de Miraflores, el romántico Parque del Amor y disfrutad de un ceviche auténtico o una causa limeña en alguno de los mejores restaurantes del continente.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="day-card">
+                    <div class="day-header">
+                        <div class="day-title">
+                            <span class="day-number">Días 27 - 28</span>
+                            <span class="day-date">29 - 30 de Julio: Vuelo de Retorno & Llegada a Zaragoza</span>
+                        </div>
+                        <div class="day-badge" style="background:#0f172a;"><i class="fa-solid fa-house-chimney"></i> Vuelta a Casa</div>
+                    </div>
+                    <div class="day-body">
+                        <div class="info-grid">
+                            <div class="info-pill">
+                                <i class="fa-solid fa-plane-departure"></i>
+                                <div>
+                                    <div class="info-pill-title">Vuelo Transatlántico</div>
+                                    <div class="info-pill-text"><strong>29 de Julio:</strong> Salida de Lima a las 23:00. <br><em>(Estar en el aeropuerto a las 20:00 para el Check-in internacional).</em></div>
+                                </div>
+                            </div>
+                            <div class="info-pill">
+                                <i class="fa-solid fa-bus"></i>
+                                <div>
+                                    <div class="info-pill-title">Autobús de Conexión</div>
+                                    <div class="info-pill-text"><strong>30 de Julio:</strong> Llegada a Madrid (Barajas) a las 17:20. Autobús Madrid ➔ Zaragoza de las 21:00.</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="plan-box" style="background:#f1f5f9; border-left-color:#64748b;">
+                            <div class="plan-box-title" style="color:#334155;"><i class="fa-solid fa-flag-checkered"></i> Fin de la Aventura</div>
+                            <div class="plan-box-text" style="color:#475569;"><strong>Llegada final a Zaragoza a las 00:50 AM del 30 de Julio.</strong> Fin de un viaje de ensueño absolutamente inolvidable.</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>
+Mostrando Viaje verano 2026.html.
