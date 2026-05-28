@@ -1,11 +1,3 @@
-
-Viaje verano 2026.html
-
-Página
-1
-/
-1
-100 %
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -63,8 +55,8 @@ Página
             content: '';
             position: absolute;
             top: 0; left: 0; right: 0; bottom: 0;
-            background: url('https://images.unsplash.com/photo-1596587328696-3597107bf4ec?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
-            opacity: 0.15;
+            background: url('https://images.unsplash.com/photo-1536308037887-165852797016?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+            opacity: 0.25;
             pointer-events: none;
         }
 
@@ -72,6 +64,7 @@ Página
             font-size: 3.5rem;
             margin-bottom: 10px;
             letter-spacing: -1px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
         }
 
         .hero p {
@@ -80,6 +73,7 @@ Página
             font-weight: 300;
             max-width: 600px;
             margin: 0 auto 30px;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.2);
         }
 
         .badge-container {
@@ -322,16 +316,35 @@ Página
 
         .image-box, .map-box {
             border-radius: 12px;
-            height: 200px;
+            height: 220px;
             overflow: hidden;
             position: relative;
             border: 1px solid var(--border-color);
+            background: #e2e8f0; /* Fallback background style while loading */
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .image-box img, .map-box img {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        /* Placeholder styles if image is broken */
+        .image-placeholder-fallback {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        .image-placeholder-fallback i {
+            font-size: 2.5rem;
         }
 
         .visual-label {
@@ -345,6 +358,7 @@ Página
             font-size: 0.75rem;
             font-weight: 600;
             backdrop-filter: blur(4px);
+            z-index: 2;
         }
 
         /* INFO BOXES */
@@ -528,11 +542,11 @@ Página
                         </div>
                         <div class="visual-container">
                             <div class="image-box">
-                                <img src="https://images.unsplash.com/photo-1596587328696-3597107bf4ec?auto=format&fit=crop&w=500&q=80" alt="Monserrate Bogotá">
+                                <img src="https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?auto=format&fit=crop&w=800&q=80" alt="Monserrate Bogotá" data-fallback-bg="linear-gradient(135deg, #0284c7 0%, #0369a1 100%)" data-fallback-icon="fa-mountain">
                                 <div class="visual-label">Cerro de Monserrate</div>
                             </div>
                             <div class="map-box">
-                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Bogot%C3%A1_Candelaria_Street.jpg/640px-Bogot%C3%A1_Candelaria_Street.jpg" alt="La Candelaria">
+                                <img src="https://images.unsplash.com/photo-1597659840241-37e2b9c2f55f?auto=format&fit=crop&w=800&q=80" alt="La Candelaria" data-fallback-bg="linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%)" data-fallback-icon="fa-road">
                                 <div class="visual-label">Barrio La Candelaria</div>
                             </div>
                         </div>
@@ -590,11 +604,11 @@ Página
                         </div>
                         <div class="visual-container">
                             <div class="image-box">
-                                <img src="https://images.unsplash.com/photo-1589981881261-26798e4d8fb8?auto=format&fit=crop&w=500&q=80" alt="Valle de Cocora">
+                                <img src="https://images.unsplash.com/photo-1587588354456-ae0904035477?auto=format&fit=crop&w=800&q=80" alt="Valle de Cocora" data-fallback-bg="linear-gradient(135deg, #10b981 0%, #047857 100%)" data-fallback-icon="fa-tree">
                                 <div class="visual-label">Palmas de Cera</div>
                             </div>
                             <div class="image-box">
-                                <img src="https://images.unsplash.com/photo-1590001155093-a3c66ab0c3ff?auto=format&fit=crop&w=500&q=80" alt="Salento">
+                                <img src="https://images.unsplash.com/photo-1598285934515-db1475c40ee0?auto=format&fit=crop&w=800&q=80" alt="Salento" data-fallback-bg="linear-gradient(135deg, #f59e0b 0%, #d97706 100%)" data-fallback-icon="fa-house-chimney">
                                 <div class="visual-label">Casas de Salento</div>
                             </div>
                         </div>
@@ -613,6 +627,12 @@ Página
                         <div class="plan-box">
                             <div class="plan-box-title"><i class="fa-solid fa-graduation-cap"></i> Tour del Café</div>
                             <div class="plan-box-text">Realizar un tour interactivo del café en una finca tradicional de renombre (Finca El Ocaso o Las Acacias). Aprenderéis todo el proceso artesanal, desde la recolección de la semilla hasta la cata de la taza perfecta.</div>
+                        </div>
+                        <div class="visual-container">
+                            <div class="image-box" style="grid-column: span 2; height: 260px;">
+                                <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=1200&q=80" alt="Finca Cafetera" data-fallback-bg="linear-gradient(135deg, #78350f 0%, #451a03 100%)" data-fallback-icon="fa-coffee">
+                                <div class="visual-label">Recolección de café de especialidad</div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -674,9 +694,9 @@ Página
                             </div>
                         </div>
                         <div class="visual-container">
-                            <div class="image-box">
-                                <img src="https://images.unsplash.com/photo-1544913716-df2df5514f77?auto=format&fit=crop&w=500&q=80" alt="Peñol">
-                                <div class="visual-label">La Piedra del Peñol</div>
+                            <div class="image-box" style="grid-column: span 2; height: 260px;">
+                                <img src="https://images.unsplash.com/photo-1569336415962-a4bd9f69cd83?auto=format&fit=crop&w=1200&q=80" alt="Peñol" data-fallback-bg="linear-gradient(135deg, #0284c7 0%, #0369a1 100%)" data-fallback-icon="fa-mountain">
+                                <div class="visual-label">La Piedra del Peñol y Embalse</div>
                             </div>
                         </div>
                     </div>
@@ -693,6 +713,12 @@ Página
                     <div class="day-body">
                         <p><strong>10 de Julio:</strong> Dedicad el día a conocer la transformación de la ciudad. Podéis visitar la Plaza Botero, el Metrocable y recorrer el centro.</p>
                         <p style="margin-top: 10px;"><strong>11 de Julio (Medellín de Autor):</strong> Disfrutad del gran ambiente urbano. Visitad el Jardín Botánico, el Museo de Arte Moderno (MAMM) y salid a cenar y tomar cócteles de autor por la vibrante zona de <strong>Provenza (El Poblado)</strong>.</p>
+                        <div class="visual-container">
+                            <div class="image-box" style="grid-column: span 2;">
+                                <img src="https://images.unsplash.com/photo-1619542402915-dcaf30e4e2a1?auto=format&fit=crop&w=1200&q=80" alt="Medellín" data-fallback-bg="linear-gradient(135deg, #0369a1 0%, #0f172a 100%)" data-fallback-icon="fa-cable-car">
+                                <div class="visual-label">Panorámica y metrocable de Medellín</div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -757,8 +783,8 @@ Página
                             <div class="warning-box-text">Llevad abundante repelente de mosquitos fuerte, protector solar de alta graduación, calzado cómodo de trekking y agua suficiente.</div>
                         </div>
                         <div class="visual-container">
-                            <div class="image-box">
-                                <img src="https://images.unsplash.com/photo-1620215715830-4e32049e001c?auto=format&fit=crop&w=500&q=80" alt="Tayrona">
+                            <div class="image-box" style="grid-column: span 2; height: 260px;">
+                                <img src="https://images.unsplash.com/photo-1589146566735-86b3dc2ee1db?auto=format&fit=crop&w=1200&q=80" alt="Tayrona" data-fallback-bg="linear-gradient(135deg, #0e7490 0%, #155e75 100%)" data-fallback-icon="fa-umbrella-beach">
                                 <div class="visual-label">Cabo San Juan (Tayrona)</div>
                             </div>
                         </div>
@@ -814,6 +840,12 @@ Página
                             <div class="plan-box-title"><i class="fa-solid fa-map"></i> Ruta del Día</div>
                             <div class="plan-box-text">Madrugad para recorrer las históricas murallas y el imponente Castillo de San Felipe. Por la tarde, cruzad al bohemio barrio de <strong>Getsemaní</strong>, rebosante de arte urbano, buganvillas y música en directo en la Plaza de la Trinidad. Ver el atardecer desde el mítico <strong>Café del Mar</strong> es obligatorio.</div>
                         </div>
+                        <div class="visual-container">
+                            <div class="image-box" style="grid-column: span 2; height: 260px;">
+                                <img src="https://images.unsplash.com/photo-1583531352515-8884133a9602?auto=format&fit=crop&w=1200&q=80" alt="Cartagena" data-fallback-bg="linear-gradient(135deg, #be123c 0%, #9f1239 100%)" data-fallback-icon="fa-landmark">
+                                <div class="visual-label">Calles coloniales y balcones de Cartagena</div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -831,9 +863,9 @@ Página
                             <div class="plan-box-text">Cartagena no destaca por sus playas urbanas, así que lo ideal es reservar una excursión de un día en lancha rápida hacia las <strong>Islas del Rosario</strong>. Disfrutad de un exclusivo club de playa privado (como Bora Bora o Isla Bela) con arenas blancas y aguas turquesas.</div>
                         </div>
                         <div class="visual-container">
-                            <div class="image-box">
-                                <img src="https://images.unsplash.com/photo-1548574505-5e239809ee19?auto=format&fit=crop&w=500&q=80" alt="Cartagena">
-                                <div class="visual-label">Calles de Cartagena</div>
+                            <div class="image-box" style="grid-column: span 2; height: 260px;">
+                                <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80" alt="Islas del Rosario" data-fallback-bg="linear-gradient(135deg, #0284c7 0%, #0369a1 100%)" data-fallback-icon="fa-ship">
+                                <div class="visual-label">Playas de ensueño en Islas del Rosario</div>
                             </div>
                         </div>
                     </div>
@@ -941,8 +973,8 @@ Página
                         </div>
                         <p style="margin-top:15px; font-weight:600; font-size:0.95rem; color:var(--primary-peru);"><i class="fa-solid fa-hotel"></i> Noche en Ollantaytambo: Hostal Apu Qhawarina (19€, pago allí).</p>
                         <div class="visual-container">
-                            <div class="image-box">
-                                <img src="https://images.unsplash.com/photo-1587595431973-160d0d94adb1?auto=format&fit=crop&w=500&q=80" alt="Machu Picchu">
+                            <div class="image-box" style="grid-column: span 2; height: 320px;">
+                                <img src="https://images.unsplash.com/photo-1508962914676-134849a727f0?auto=format&fit=crop&w=1200&q=80" alt="Machu Picchu" data-fallback-bg="linear-gradient(135deg, #e11d48 0%, #be123c 100%)" data-fallback-icon="fa-mountain-sun">
                                 <div class="visual-label">Machu Picchu</div>
                             </div>
                         </div>
@@ -963,6 +995,12 @@ Página
                             <div class="plan-box-text">Día para recorrer las impresionantes ruinas del <strong>Valle Sagrado</strong> contratando un tour guiado con una agencia local en Ollantaytambo. Por la tarde/noche, regreso definitivo a la majestuosa ciudad de Cusco.</div>
                         </div>
                         <p style="margin-top:15px; font-weight:600; font-size:0.95rem; color:var(--primary-peru);"><i class="fa-solid fa-hotel"></i> Noche en Cusco: Principe III (Base para las próximas 4 noches, 95€ por estancia con desayuno buffet).</p>
+                        <div class="visual-container">
+                            <div class="image-box" style="grid-column: span 2; height: 260px;">
+                                <img src="https://images.unsplash.com/photo-1526392060635-9d6019884377?auto=format&fit=crop&w=1200&q=80" alt="Valle Sagrado" data-fallback-bg="linear-gradient(135deg, #b91c1c 0%, #7f1d1d 100%)" data-fallback-icon="fa-map">
+                                <div class="visual-label">Paisaje de los Andes peruanos</div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -1018,6 +1056,12 @@ Página
                             <div class="plan-box-title"><i class="fa-solid fa-utensils"></i> Plan de Sabores</div>
                             <div class="plan-box-text">Día completo en Lima. Dad un paseo por el Malecón de Miraflores, el romántico Parque del Amor y disfrutad de un ceviche auténtico o una causa limeña en alguno de los mejores restaurantes del continente.</div>
                         </div>
+                        <div class="visual-container">
+                            <div class="image-box" style="grid-column: span 2; height: 260px;">
+                                <img src="https://images.unsplash.com/photo-1531956531700-4034fedff1f6?auto=format&fit=crop&w=1200&q=80" alt="Lima" data-fallback-bg="linear-gradient(135deg, #e11d48 0%, #1e293b 100%)" data-fallback-icon="fa-water">
+                                <div class="visual-label">Costa Verde - Miraflores (Lima)</div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -1058,6 +1102,31 @@ Página
         </div>
     </div>
 
+    <!-- SCRIPT DE SEGURIDAD PARA LAS IMÁGENES -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const images = document.querySelectorAll('img');
+            images.forEach(img => {
+                img.addEventListener('error', function() {
+                    const fallbackBg = this.getAttribute('data-fallback-bg') || 'linear-gradient(135deg, #1e293b 0%, #0f172a 100%)';
+                    const fallbackIcon = this.getAttribute('data-fallback-icon') || 'fa-map-location-dot';
+                    const parent = this.parentElement;
+                    
+                    if (parent) {
+                        parent.style.background = fallbackBg;
+                        this.style.display = 'none';
+                        
+                        const placeholder = document.createElement('div');
+                        placeholder.className = 'image-placeholder-fallback';
+                        placeholder.innerHTML = `
+                            <i class="fa-solid ${fallbackIcon}"></i>
+                            <span style="font-size: 0.8rem; opacity: 0.9;">${this.alt}</span>
+                        `;
+                        parent.appendChild(placeholder);
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html>
-Mostrando Viaje verano 2026.html.
