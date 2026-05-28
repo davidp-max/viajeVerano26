@@ -99,10 +99,225 @@
         .country-badge.co { color: #38bdf8; }
         .country-badge.pe { color: #fb7185; }
 
+        /* MAP SIMULATOR COMPONENT */
+        .map-section {
+            max-width: 1200px;
+            margin: 40px auto 10px;
+            padding: 0 20px;
+        }
+
+        .map-card {
+            background: #0f172a;
+            border-radius: 24px;
+            padding: 30px;
+            box-shadow: var(--shadow-lg);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .map-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .map-header h2 {
+            font-size: 1.6rem;
+            color: #38bdf8;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .map-controls {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .map-btn {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 12px;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.9rem;
+        }
+
+        .map-btn:hover {
+            background: #38bdf8;
+            color: #0f172a;
+            border-color: #38bdf8;
+        }
+
+        .map-btn.active {
+            background: #e11d48;
+            border-color: #e11d48;
+            color: white;
+        }
+
+        .map-btn:disabled {
+            opacity: 0.4;
+            cursor: not-allowed;
+        }
+
+        .speed-select {
+            background: #1e293b;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 8px 12px;
+            border-radius: 12px;
+            font-family: inherit;
+            cursor: pointer;
+            outline: none;
+            font-size: 0.9rem;
+        }
+
+        .canvas-container {
+            width: 100%;
+            height: 480px;
+            background: radial-gradient(circle at center, #1e293b 0%, #0f172a 100%);
+            border-radius: 16px;
+            position: relative;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        #flight-map-svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        .flight-path {
+            fill: none;
+            stroke-width: 2.5;
+            stroke-dasharray: 6 4;
+            stroke-linecap: round;
+            opacity: 0.3;
+            transition: opacity 0.5s;
+        }
+
+        .flight-path.active {
+            opacity: 0.8;
+        }
+
+        .flight-path-animated {
+            fill: none;
+            stroke-width: 3;
+            stroke-linecap: round;
+            stroke-dasharray: 1000;
+            stroke-dashoffset: 1000;
+        }
+
+        .flight-path-animated.co {
+            stroke: #38bdf8;
+        }
+
+        .flight-path-animated.pe {
+            stroke: #fb7185;
+        }
+
+        .city-node {
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .city-node:hover {
+            transform: scale(1.2);
+        }
+
+        .city-pulse {
+            animation: pulse 2s infinite;
+            transform-origin: center;
+        }
+
+        @keyframes pulse {
+            0% { r: 5px; opacity: 1; }
+            100% { r: 18px; opacity: 0; }
+        }
+
+        .city-label {
+            font-size: 11px;
+            font-weight: 700;
+            fill: #94a3b8;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            transition: fill 0.3s;
+            pointer-events: none;
+        }
+
+        .city-node.active .city-label {
+            fill: #38bdf8;
+        }
+
+        .city-node.pe-active .city-label {
+            fill: #fb7185;
+        }
+
+        /* Flight status card */
+        .flight-info-card {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            background: rgba(15, 23, 42, 0.9);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(12px);
+            padding: 15px 20px;
+            border-radius: 16px;
+            max-width: 320px;
+            pointer-events: none;
+            transition: all 0.3s;
+            opacity: 0;
+            transform: translateY(10px);
+            z-index: 10;
+        }
+
+        .flight-info-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .flight-info-card h4 {
+            color: #38bdf8;
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .flight-info-card.pe h4 {
+            color: #fb7185;
+        }
+
+        .flight-info-card p {
+            color: #e2e8f0;
+            font-size: 0.85rem;
+            margin: 0;
+        }
+
+        .flight-info-card .dates {
+            color: var(--accent-gold);
+            font-weight: 700;
+            margin-top: 4px;
+            font-size: 0.9rem;
+        }
+
         /* CONTAINER AND LAYOUT */
         .wrapper {
             max-width: 1200px;
-            margin: 40px auto;
+            margin: 20px auto 40px;
             padding: 0 20px;
             display: grid;
             grid-template-columns: 320px 1fr;
@@ -112,6 +327,7 @@
         @media (max-width: 968px) {
             .wrapper {
                 grid-template-columns: 1fr;
+                margin-top: 20px;
             }
             .sidebar {
                 position: static !important;
@@ -457,6 +673,150 @@
         <div class="badge-container">
             <div class="country-badge co"><i class="fa-solid fa-cloud-sun"></i> 3 - 19 Jul | Colombia</div>
             <div class="country-badge pe"><i class="fa-solid fa-mountain-sun"></i> 20 - 29 Jul | Perú</div>
+        </div>
+    </div>
+
+    <!-- INTERACTIVE FLIGHT MAP SIMULATOR -->
+    <div class="map-section">
+        <div class="map-card">
+            <div class="map-header">
+                <h2><i class="fa-solid fa-plane-departure"></i> Simulador de Vuelo</h2>
+                <div class="map-controls">
+                    <button class="map-btn" id="btn-play-flight"><i class="fa-solid fa-play"></i> Despegar</button>
+                    <button class="map-btn" id="btn-next-leg" disabled><i class="fa-solid fa-forward"></i> Escala</button>
+                    <button class="map-btn" id="btn-reset-flight"><i class="fa-solid fa-rotate-left"></i> Reiniciar</button>
+                    <select class="speed-select" id="flight-speed">
+                        <option value="1">Velocidad: Normal</option>
+                        <option value="2">Velocidad: Rápida</option>
+                        <option value="0.5">Velocidad: Lenta</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="canvas-container">
+                <svg id="flight-map-svg" viewBox="0 0 1000 480" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Stylized Atlantic/Continents outlines as ambient design -->
+                    <!-- Western Europe / Spain Area -->
+                    <path d="M 800,50 Q 860,60 910,100 T 950,220" fill="none" stroke="rgba(255,255,255,0.04)" stroke-width="20" stroke-linecap="round"/>
+                    <path d="M 810,120 L 890,110 L 900,160 L 840,190 Z" fill="rgba(255,255,255,0.03)"/>
+                    
+                    <!-- Caribbean & South America Outline -->
+                    <path d="M 50,300 Q 150,350 250,320 T 300,500 T 150,700" fill="none" stroke="rgba(255,255,255,0.04)" stroke-width="30" stroke-linecap="round"/>
+                    <path d="M 120,380 C 180,340 320,380 280,500 C 240,600 300,680 200,680 C 120,680 80,550 120,380 Z" fill="rgba(255,255,255,0.03)"/>
+
+                    <!-- Ambient Grid Lines -->
+                    <line x1="0" y1="120" x2="1000" y2="120" stroke="rgba(255,255,255,0.02)" stroke-dasharray="5 5"/>
+                    <line x1="0" y1="240" x2="1000" y2="240" stroke="rgba(255,255,255,0.02)" stroke-dasharray="5 5"/>
+                    <line x1="0" y1="360" x2="1000" y2="360" stroke="rgba(255,255,255,0.02)" stroke-dasharray="5 5"/>
+                    <line x1="250" y1="0" x2="250" y2="480" stroke="rgba(255,255,255,0.02)" stroke-dasharray="5 5"/>
+                    <line x1="500" y1="0" x2="500" y2="480" stroke="rgba(255,255,255,0.02)" stroke-dasharray="5 5"/>
+                    <line x1="750" y1="0" x2="750" y2="480" stroke="rgba(255,255,255,0.02)" stroke-dasharray="5 5"/>
+
+                    <!-- FLIGHT PATHS -->
+                    <!-- Leg 1: Zaragoza -> Madrid -->
+                    <path id="path-0" d="M 870,120 Q 865,130 850,145" class="flight-path" stroke="#38bdf8"/>
+                    <!-- Leg 2: Madrid -> Bogotá -->
+                    <path id="path-1" d="M 850,145 Q 520,180 240,340" class="flight-path" stroke="#38bdf8"/>
+                    <!-- Leg 3: Bogotá -> Pereira -->
+                    <path id="path-2" d="M 240,340 Q 215,342 205,348" class="flight-path" stroke="#38bdf8"/>
+                    <!-- Leg 4: Pereira -> Medellín -->
+                    <path id="path-3" d="M 205,348 Q 210,320 220,310" class="flight-path" stroke="#38bdf8"/>
+                    <!-- Leg 5: Medellín -> Guatapé -->
+                    <path id="path-4" d="M 220,310 Q 235,308 245,305" class="flight-path" stroke="#38bdf8"/>
+                    <!-- Leg 6: Guatapé -> Santa Marta -->
+                    <path id="path-5" d="M 245,305 Q 260,260 270,225" class="flight-path" stroke="#38bdf8"/>
+                    <!-- Leg 7: Santa Marta -> Cartagena -->
+                    <path id="path-6" d="M 270,225 Q 240,223 220,230" class="flight-path" stroke="#38bdf8"/>
+                    <!-- Leg 8: Cartagena -> Bogotá -->
+                    <path id="path-7" d="M 220,230 Q 230,285 240,340" class="flight-path" stroke="#38bdf8"/>
+                    <!-- Leg 9: Bogotá -> Lima -->
+                    <path id="path-8" d="M 240,340 Q 180,390 160,425" class="flight-path" stroke="#fb7185"/>
+                    <!-- Leg 10: Lima -> Cusco -->
+                    <path id="path-9" d="M 160,425 Q 195,435 220,445" class="flight-path" stroke="#fb7185"/>
+                    <!-- Leg 11: Cusco -> Lima -->
+                    <path id="path-10" d="M 220,445 Q 195,435 160,425" class="flight-path" stroke="#fb7185"/>
+                    <!-- Leg 12: Lima -> Madrid -->
+                    <path id="path-11" d="M 160,425 Q 490,260 850,145" class="flight-path" stroke="#fb7185"/>
+                    <!-- Leg 13: Madrid -> Zaragoza -->
+                    <path id="path-12" d="M 850,145 Q 865,130 870,120" class="flight-path" stroke="#fb7185"/>
+
+                    <!-- ANIMATED TRACERS -->
+                    <path id="anim-path" d="" class="flight-path-animated"/>
+
+                    <!-- CITY NODES -->
+                    <!-- Zaragoza -->
+                    <g id="node-zaragoza" class="city-node" transform="translate(870, 120)">
+                        <circle r="12" class="city-pulse" fill="rgba(56, 189, 248, 0.4)"/>
+                        <circle r="5" fill="#38bdf8"/>
+                        <text dx="10" dy="4" class="city-label">Zaragoza</text>
+                    </g>
+                    <!-- Madrid -->
+                    <g id="node-madrid" class="city-node" transform="translate(850, 145)">
+                        <circle r="12" class="city-pulse" fill="rgba(56, 189, 248, 0.4)"/>
+                        <circle r="5" fill="#38bdf8"/>
+                        <text dx="-55" dy="18" class="city-label">Madrid</text>
+                    </g>
+                    <!-- Bogotá -->
+                    <g id="node-bogota" class="city-node" transform="translate(240, 340)">
+                        <circle r="12" class="city-pulse" fill="rgba(56, 189, 248, 0.4)"/>
+                        <circle r="5" fill="#38bdf8"/>
+                        <text dx="10" dy="14" class="city-label">Bogotá</text>
+                    </g>
+                    <!-- Pereira / Eje Cafetero -->
+                    <g id="node-pereira" class="city-node" transform="translate(205, 348)">
+                        <circle r="12" class="city-pulse" fill="rgba(56, 189, 248, 0.4)"/>
+                        <circle r="5" fill="#38bdf8"/>
+                        <text dx="-50" dy="16" class="city-label">Salento</text>
+                    </g>
+                    <!-- Medellín -->
+                    <g id="node-medellin" class="city-node" transform="translate(220, 310)">
+                        <circle r="12" class="city-pulse" fill="rgba(56, 189, 248, 0.4)"/>
+                        <circle r="5" fill="#38bdf8"/>
+                        <text dx="-58" dy="4" class="city-label">Medellín</text>
+                    </g>
+                    <!-- Guatapé -->
+                    <g id="node-guatape" class="city-node" transform="translate(245, 305)">
+                        <circle r="12" class="city-pulse" fill="rgba(56, 189, 248, 0.4)"/>
+                        <circle r="5" fill="#38bdf8"/>
+                        <text dx="10" dy="-4" class="city-label">Guatapé</text>
+                    </g>
+                    <!-- Santa Marta / Tayrona -->
+                    <g id="node-santamarta" class="city-node" transform="translate(270, 225)">
+                        <circle r="12" class="city-pulse" fill="rgba(56, 189, 248, 0.4)"/>
+                        <circle r="5" fill="#38bdf8"/>
+                        <text dx="10" dy="-4" class="city-label">Tayrona</text>
+                    </g>
+                    <!-- Cartagena -->
+                    <g id="node-cartagena" class="city-node" transform="translate(220, 230)">
+                        <circle r="12" class="city-pulse" fill="rgba(56, 189, 248, 0.4)"/>
+                        <circle r="5" fill="#38bdf8"/>
+                        <text dx="-68" dy="-4" class="city-label">Cartagena</text>
+                    </g>
+                    <!-- Lima -->
+                    <g id="node-lima" class="city-node" transform="translate(160, 425)">
+                        <circle r="12" class="city-pulse" fill="rgba(251, 113, 133, 0.4)"/>
+                        <circle r="5" fill="#fb7185"/>
+                        <text dx="-38" dy="16" class="city-label">Lima</text>
+                    </g>
+                    <!-- Cusco -->
+                    <g id="node-cusco" class="city-node" transform="translate(220, 445)">
+                        <circle r="12" class="city-pulse" fill="rgba(251, 113, 133, 0.4)"/>
+                        <circle r="5" fill="#fb7185"/>
+                        <text dx="10" dy="14" class="city-label">Cusco</text>
+                    </g>
+
+                    <!-- FLYING PLANE SVG ICON -->
+                    <g id="plane-avatar" style="display: none;">
+                        <path d="M12.5,2C12.5,2,11.5,0,10,0S7.5,2,7.5,2L7.5,8L1.5,12L1.5,14L7.5,12.5L7.5,17L5.5,18.5L5.5,20L10,19L14.5,20L14.5,18.5L12.5,17L12.5,12.5L18.5,14L18.5,12L12.5,8Z" fill="#ffffff" transform="translate(-10, -10)"/>
+                    </g>
+                </svg>
+
+                <div class="flight-info-card" id="info-card">
+                    <h4 id="card-city-name"><i class="fa-solid fa-plane-arrival"></i> Destino</h4>
+                    <p id="card-description">Cargando...</p>
+                    <p class="dates" id="card-dates">Fecha</p>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -880,7 +1240,7 @@
                         <div class="day-badge" style="background:#dc2626;"><i class="fa-solid fa-shield-halved"></i> Alerta Crítica</div>
                     </div>
                     <div class="day-body">
-                        <p>Últimas compras de souvenirs en Las Bóvedas por la mañana.</p>
+                        <p>Últimas compras de souvenirs en Las Bódedas por la mañana.</p>
                         <div class="warning-box">
                             <div class="warning-box-title"><i class="fa-solid fa-triangle-exclamation"></i> Recomendación de Seguridad</div>
                             <div class="warning-box-text"><strong>Volad a Bogotá esta tarde/noche y dormid en un hotel pegado al aeropuerto (El Dorado).</strong> El clima de Bogotá suele generar densas nieblas matutinas que retrasan vuelos domésticos; volar el mismo 20 por la mañana es un riesgo inmenso para vuestro vuelo internacional.</div>
@@ -1102,9 +1462,10 @@
         </div>
     </div>
 
-    <!-- SCRIPT DE SEGURIDAD PARA LAS IMÁGENES -->
+    <!-- SCRIPT DE SEGURIDAD PARA LAS IMÁGENES & SIMULADOR DE VUELO -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
+            /* 1. SISTEMA DE SEGURIDAD PARA IMÁGENES ROTAS */
             const images = document.querySelectorAll('img');
             images.forEach(img => {
                 img.addEventListener('error', function() {
@@ -1126,6 +1487,312 @@
                     }
                 });
             });
+
+            /* 2. SIMULADOR DE VUELO INTERACTIVO */
+            const flightLegs = [
+                {
+                    from: "Zaragoza",
+                    to: "Madrid",
+                    description: "Enlace previo para tomar el vuelo internacional de largo radio.",
+                    dates: "3 de Julio",
+                    block: "b1",
+                    colorClass: "co"
+                },
+                {
+                    from: "Madrid",
+                    to: "Bogotá",
+                    description: "Cruzar el Océano Atlántico rumbo a la cordillera de los Andes en Colombia.",
+                    dates: "3 - 4 de Julio",
+                    block: "b1",
+                    colorClass: "co"
+                },
+                {
+                    from: "Bogotá",
+                    to: "Salento",
+                    description: "Vuelo interno al Eje Cafetero y traslado al colorido pueblo de Salento.",
+                    dates: "5 - 7 de Julio",
+                    block: "b2",
+                    colorClass: "co"
+                },
+                {
+                    from: "Salento",
+                    to: "Medellín",
+                    description: "Vuelo corto al aeropuerto de Rionegro rumbo a la eterna primavera.",
+                    dates: "8 de Julio",
+                    block: "b3",
+                    colorClass: "co"
+                },
+                {
+                    from: "Medellín",
+                    to: "Guatapé",
+                    description: "Escapada nocturna romántica directa al embalse y los zócalos coloridos.",
+                    dates: "8 - 9 de Julio",
+                    block: "b3",
+                    colorClass: "co"
+                },
+                {
+                    from: "Guatapé",
+                    to: "Tayrona",
+                    description: "Vuelo directo del interior al mar Caribe salvaje en el Parque Tayrona.",
+                    dates: "12 - 15 de Julio",
+                    block: "b4",
+                    colorClass: "co"
+                },
+                {
+                    from: "Tayrona",
+                    to: "Cartagena",
+                    description: "Transfer terrestre bordeando la costa hacia la mágica muralla colonial.",
+                    dates: "16 - 18 de Julio",
+                    block: "b5",
+                    colorClass: "co"
+                },
+                {
+                    from: "Cartagena",
+                    to: "Bogotá",
+                    description: "Vuelo estratégico de regreso y noche de seguridad junto al aeropuerto.",
+                    dates: "19 de Julio",
+                    block: "b5",
+                    colorClass: "co"
+                },
+                {
+                    from: "Bogotá",
+                    to: "Lima",
+                    description: "Salto internacional de Colombia a Perú y conexión directa con Cusco.",
+                    dates: "20 de Julio",
+                    block: "pe1",
+                    colorClass: "pe"
+                },
+                {
+                    from: "Lima",
+                    to: "Cusco",
+                    description: "Llegada al ombligo del mundo en los Andes peruanos.",
+                    dates: "20 - 21 de Julio",
+                    block: "pe1",
+                    colorClass: "pe"
+                },
+                {
+                    from: "Cusco",
+                    to: "Lima",
+                    description: "Regreso a la capital costera para disfrutar de su gastronomía estelar.",
+                    dates: "27 - 28 de Julio",
+                    block: "pe2",
+                    colorClass: "pe"
+                },
+                {
+                    from: "Lima",
+                    to: "Madrid",
+                    description: "Vuelo transatlántico nocturno de regreso a España.",
+                    dates: "29 - 30 de Julio",
+                    block: "pe2",
+                    colorClass: "pe"
+                },
+                {
+                    from: "Madrid",
+                    to: "Zaragoza",
+                    description: "Último trayecto en autobús. Llegada de madrugada a Zaragoza.",
+                    dates: "30 de Julio",
+                    block: "pe2",
+                    colorClass: "pe"
+                }
+            ];
+
+            let currentLeg = 0;
+            let isAnimating = false;
+            let animationTimer = null;
+
+            const btnPlay = document.getElementById('btn-play-flight');
+            const btnNext = document.getElementById('btn-next-leg');
+            const btnReset = document.getElementById('btn-reset-flight');
+            const speedSelect = document.getElementById('flight-speed');
+            const plane = document.getElementById('plane-avatar');
+            const animPath = document.getElementById('anim-path');
+            const infoCard = document.getElementById('info-card');
+
+            // Elements of the info card
+            const cardCity = document.getElementById('card-city-name');
+            const cardDesc = document.getElementById('card-description');
+            const cardDates = document.getElementById('card-dates');
+
+            function getSpeedMultiplier() {
+                return parseFloat(speedSelect.value);
+            }
+
+            function highlightNode(nodeId, isPeru) {
+                // Clear active nodes
+                document.querySelectorAll('.city-node').forEach(node => {
+                    node.classList.remove('active', 'pe-active');
+                });
+                
+                const node = document.getElementById('node-' + nodeId.toLowerCase().replace(/\s/g, ''));
+                if (node) {
+                    node.classList.add(isPeru ? 'pe-active' : 'active');
+                }
+            }
+
+            function animateLeg(index, callback) {
+                if (index >= flightLegs.length) {
+                    isAnimating = false;
+                    btnPlay.innerHTML = '<i class="fa-solid fa-rotate-left"></i> Completado';
+                    btnNext.disabled = true;
+                    return;
+                }
+
+                isAnimating = true;
+                const leg = flightLegs[index];
+                const pathElement = document.getElementById('path-' + index);
+                
+                if (!pathElement) return;
+
+                // Highlight background path
+                pathElement.classList.add('active');
+
+                // Configure dynamic tracer
+                const dAttribute = pathElement.getAttribute('d');
+                animPath.setAttribute('d', dAttribute);
+                animPath.className.baseVal = `flight-path-animated ${leg.colorClass}`;
+
+                const pathLength = animPath.getTotalLength();
+                animPath.style.strokeDasharray = pathLength;
+                animPath.style.strokeDashoffset = pathLength;
+
+                // Setup plane
+                plane.style.display = 'block';
+
+                const duration = (index === 1 || index === 11) ? 3500 : 1500; // Ocean flights take longer
+                const adjustedDuration = duration / getSpeedMultiplier();
+
+                let startTime = null;
+
+                function step(timestamp) {
+                    if (!startTime) startTime = timestamp;
+                    const progress = (timestamp - startTime) / adjustedDuration;
+
+                    if (progress < 1) {
+                        const currentLength = pathLength - (progress * pathLength);
+                        animPath.style.strokeDashoffset = currentLength;
+
+                        // Move plane along path
+                        const point = animPath.getPointAtLength(progress * pathLength);
+                        
+                        // Calculate orientation angle of the plane
+                        let angle = 0;
+                        if (progress > 0.01) {
+                            const prevPoint = animPath.getPointAtLength((progress - 0.01) * pathLength);
+                            angle = Math.atan2(point.y - prevPoint.y, point.x - prevPoint.x) * (180 / Math.PI) + 90;
+                        }
+
+                        plane.setAttribute('transform', `translate(${point.x}, ${point.y}) rotate(${angle})`);
+                        
+                        if (isAnimating) {
+                            animationTimer = requestAnimationFrame(step);
+                        }
+                    } else {
+                        // Animation finished for this leg
+                        animPath.style.strokeDashoffset = 0;
+                        const endPoint = animPath.getPointAtLength(pathLength);
+                        plane.setAttribute('transform', `translate(${endPoint.x}, ${endPoint.y})`);
+
+                        highlightNode(leg.to, leg.colorClass === 'pe');
+                        showInfoCard(leg);
+
+                        if (callback) callback();
+                    }
+                }
+
+                animationTimer = requestAnimationFrame(step);
+            }
+
+            function showInfoCard(leg) {
+                cardCity.innerHTML = `<i class="fa-solid fa-plane-arrival"></i> Destino: ${leg.to}`;
+                cardDesc.textContent = leg.description;
+                cardDates.textContent = leg.dates;
+                
+                infoCard.className = `flight-info-card visible ${leg.colorClass}`;
+            }
+
+            function runAutoSimulator() {
+                if (currentLeg >= flightLegs.length) {
+                    resetSimulator();
+                    return;
+                }
+
+                btnPlay.innerHTML = '<i class="fa-solid fa-pause"></i> Pausar';
+                btnNext.disabled = false;
+
+                function next() {
+                    currentLeg++;
+                    if (currentLeg < flightLegs.length) {
+                        // Pause a little bit on each escala
+                        setTimeout(() => {
+                            if (isAnimating) {
+                                animateLeg(currentLeg, next);
+                            }
+                        }, 1200 / getSpeedMultiplier());
+                    } else {
+                        isAnimating = false;
+                        btnPlay.innerHTML = '<i class="fa-solid fa-rotate-left"></i> Completado';
+                        btnNext.disabled = true;
+                    }
+                }
+
+                animateLeg(currentLeg, next);
+            }
+
+            function pauseSimulator() {
+                isAnimating = false;
+                cancelAnimationFrame(animationTimer);
+                btnPlay.innerHTML = '<i class="fa-solid fa-play"></i> Continuar';
+            }
+
+            function resetSimulator() {
+                isAnimating = false;
+                cancelAnimationFrame(animationTimer);
+                currentLeg = 0;
+                
+                // Hide components
+                plane.style.display = 'none';
+                animPath.setAttribute('d', '');
+                infoCard.classList.remove('visible');
+
+                // Reset flight trails opacity
+                document.querySelectorAll('.flight-path').forEach(path => {
+                    path.classList.remove('active');
+                });
+
+                document.querySelectorAll('.city-node').forEach(node => {
+                    node.classList.remove('active', 'pe-active');
+                });
+
+                btnPlay.innerHTML = '<i class="fa-solid fa-plane-departure"></i> Despegar';
+                btnNext.disabled = true;
+            }
+
+            // Click Handlers
+            btnPlay.addEventListener('click', () => {
+                if (isAnimating) {
+                    pauseSimulator();
+                } else {
+                    runAutoSimulator();
+                }
+            });
+
+            btnNext.addEventListener('click', () => {
+                if (isAnimating) {
+                    pauseSimulator();
+                }
+                currentLeg++;
+                if (currentLeg < flightLegs.length) {
+                    animateLeg(currentLeg, () => {
+                        isAnimating = false;
+                        btnPlay.innerHTML = '<i class="fa-solid fa-play"></i> Continuar';
+                    });
+                } else {
+                    btnPlay.innerHTML = '<i class="fa-solid fa-rotate-left"></i> Completado';
+                    btnNext.disabled = true;
+                }
+            });
+
+            btnReset.addEventListener('click', resetSimulator);
         });
     </script>
 </body>
