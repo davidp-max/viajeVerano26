@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Itinerario de Viaje 2026</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ffffff;
+            color: #333333;
+            line-height: 1.5;
+            padding: 20px;
+            margin: 0;
+        }
+
+        h1 {
+            text-align: center;
+            color: #111111;
+            font-size: 28px;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #666666;
+            font-size: 16px;
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            font-size: 20px;
+            margin-top: 40px;
+            margin-bottom: 15px;
+            padding-bottom: 5px;
+            border-bottom: 2px solid #333333;
+        }
+
+        .colombia-title { color: #00873a; border-bottom-color: #00873a; }
+        .peru-title { color: #c61a1a; border-bottom-color: #c61a1a; }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 30px;
+            font-size: 14px;
+        }
+
+        th, td {
+            border: 1px solid #dddddd;
+            padding: 12px 10px;
+            text-align: left;
+            vertical-align: top;
+        }
+
+        th {
+            background-color: #f4f4f4;
+            color: #111111;
+            font-weight: bold;
+        }
+
+        .colombia-table th { background-color: #e6f4ea; color: #0f5132; }
+        .peru-table th { background-color: #fce8e6; color: #842029; }
+
+        .date-col {
+            width: 12%;
+            font-weight: bold;
+            color: #111111;
+        }
+
+        .route-col {
+            width: 25%;
+            font-weight: bold;
+        }
+
+        .desc-col {
+            width: 43%;
+        }
+
+        .hotel-col {
+            width: 20%;
+            font-size: 13px;
+            color: #555555;
+            background-color: #fafafa;
+        }
+
+        .transport {
+            display: block;
+            font-size: 11px;
+            color: #777777;
+            font-weight: normal;
+            margin-top: 4px;
+            text-transform: uppercase;
+        }
+
+        @media (max-width: 768px) {
+            table, thead, tbody, th, td, tr { 
+                display: block; 
+            }
+            thead tr { 
+                position: absolute;
+                top: -9999px;
+                left: -9999px;
+            }
+            tr { border: 1px solid #ccc; margin-bottom: 15px; }
+            td { 
+                border: none;
+                border-bottom: 1px solid #eee; 
+                position: relative;
+                padding-left: 35%; 
+                width: auto !important;
+            }
+            td:before { 
+                position: absolute;
+                top: 12px;
+                left: 10px;
+                width: 30%; 
+                padding-right: 10px; 
+                white-space: nowrap;
+                font-weight: bold;
+                color: #666;
+            }
+            td:nth-of-type(1):before { content: "Día"; }
+            td:nth-of-type(2):before { content: "Trayecto"; }
+            td:nth-of-type(3):before { content: "Actividad"; }
+            td:nth-of-type(4):before { content: "Alojamiento"; }
+            .transport { display: inline; margin-left: 5px; }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Plan de Viaje 2026</h1>
+    <div class="subtitle">Colombia & Perú • Itinerario Completo Optimizado</div>
+
+    <h2 class="colombia-title">Fase 1: Colombia (3 al 19 de Julio)</h2>
+    <table class="colombia-table">
+        <thead>
+            <tr>
+                <th>Día</th>
+                <th>Trayecto / Transporte</th>
+                <th>Descripción de la Actividad</th>
+                <th>Notas / Alojamiento</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="date-col">Vie, 3 Jul</td>
+                <td class="route-col">Llegada a Bogotá<span class="transport">🚌 Autobús / ✈️ Vuelo</span></td>
+                <td class="desc-col">Zaragoza - Madrid (4:50 - 8:35). Vuelo internacional a Bogotá (Llegada 15:40). Check-in, cena tranquila por La Candelaria y aclimatación a la altura (2.600 m).</td>
+                <td class="hotel-col">🏨 Hotel Ambala Bogotá Colonial<br><em>(Pagar allí)</em></td>
+            </tr>
+            <tr>
+                <td class="date-col">Sáb, 4 Jul</td>
+                <td class="route-col">Bogotá Esencial<span class="transport">🚶 A pie</span></td>
+                <td class="desc-col">Visita por la mañana al Museo del Oro y al Museo Botero. Al atardecer, subida en teleférico o funicular a Monserrate para disfrutar de las vistas de la ciudad.</td>
+                <td class="hotel-col">🏨 Hotel Ambala Bogotá Colonial</td>
+            </tr>
+            <tr>
+                <td class="date-col">Dom, 5 Jul</td>
+                <td class="route-col">Bogotá Libre<span class="transport">🚶 A pie</span></td>
+                <td class="desc-col">Día libre completo para recorrer la capital, pasear por mercados locales o visitar el barrio de Usaquén.</td>
+                <td class="hotel-col">🏨 Hotel Ambala Bogotá Colonial</td>
+            </tr>
+            <tr>
+                <td class="date-col">Lun, 6 Jul</td>
+                <td class="route-col">Bogotá ✈️ Pereira<span class="transport">✈️ Vuelo / 🚌 Traslado</span></td>
+                <td class="desc-col">Vuelo interno al Eje Cafetero (12:35 - 13:35). Traslado directo a Salento (1h). Paseo por el pueblo, subida al mirador y cena en la plaza principal.</td>
+                <td class="hotel-col">🏨 DeRequka Hostel<br><em>(Pagar allí)</em></td>
+            </tr>
+            <tr>
+                <td class="date-col">Mar, 7 Jul</td>
+                <td class="route-col">Valle de Cocora<span class="transport">🥾 Trekking</span></td>
+                <td class="desc-col">Excursión matutina de senderismo entre las icónicas palmas de cera gigantes del Valle de Cocora. Tarde de café y descanso en Salento.</td>
+                <td class="hotel-col">🏨 DeRequka Hostel</td>
+            </tr>
+            <tr>
+                <td class="date-col">Mié, 8 Jul</td>
+                <td class="route-col">Finca Cafetera<span class="transport">🚌 Local</span></td>
+                <td class="desc-col">Tour interactivo del café en una finca tradicional (El Ocaso o Las Acacias). Por la tarde, visita al colorido pueblo vecino de Filandia.</td>
+                <td class="hotel-col">🏨 DeRequka Hostel</td>
+            </tr>
+            <tr>
+                <td class="date-col">Jue, 9 Jul</td>
+                <td class="route-col">Ruta a Guatapé<span class="transport">🚌 Autobús de línea</span></td>
+                <td class="desc-col">Trayecto en autobús local Pereira - Medellín (Llegada aprox. 16:00). Conexión inmediata hacia Guatapé. Llegada de noche para disfrutar del pueblo iluminado sin masas.</td>
+                <td class="hotel-col">🏨 Hotel Zócalo Campestre</td>
+            </tr>
+            <tr>
+                <td class="date-col">Vie, 10 Jul</td>
+                <td class="route-col">Piedra del Peñol<span class="transport">🚶 Urbano</span></td>
+                <td class="desc-col">Madrugar para subir los 700 escalones de la Piedra del Peñol con vistas espectaculares del embalse. Resto del día para recorrer los zócalos del pueblo.</td>
+                <td class="hotel-col">🏨 Hotel Zócalo Campestre</td>
+            </tr>
+            <tr>
+                <td class="date-col">Sáb, 11 Jul</td>
+                <td class="route-col">Guatapé ➔ Medellín<span class="transport">🚌 Autobús local</span></td>
+                <td class="desc-col">Regreso a Medellín en autobús por la tarde (2 horas). Check-in y primer contacto con el ambiente nocturno de la ciudad (El Poblado o Laureles).</td>
+                <td class="hotel-col">🏨 Altus Hotel</td>
+            </tr>
+            <tr>
+                <td class="date-col">Dom, 12 Jul</td>
+                <td class="route-col">Medellín de Autor<span class="transport">🚶 Urbano</span></td>
+                <td class="desc-col">Día de exploración urbana: visita al Jardín Botánico, el Museo de Arte Moderno (MAMM) y cena o paseo por la zona de Provenza.</td>
+                <td class="hotel-col">🏨 Altus Hotel</td>
+            </tr>
+            <tr>
+                <td class="date-col">Lun, 13 Jul</td>
+                <td class="route-col">Cultura Paisa<span class="transport">🚠 Metro / Cable</span></td>
+                <td class="desc-col">Mañana en la Plaza Botero. Por la tarde, tour guiado de contenido histórico y social en la Comuna 13 (Graffitour). Relax en Laureles.</td>
+                <td class="hotel-col">🏨 Altus Hotel</td>
+            </tr>
+            <tr>
+                <td class="date-col">Mar, 14 Jul</td>
+                <td class="route-col">Medellín ✈️ Cartagena<span class="transport">✈️ Vuelo interno</span></td>
+                <td class="desc-col">Vuelo directo al Caribe. Llegada por la tarde. Primer paseo nocturno romántico por el interior de la majestuosa Ciudad Amurallada.</td>
+                <td class="hotel-col">🏨 Soy Local Insignia</td>
+            </tr>
+            <tr>
+                <td class="date-col">Mié, 15 Jul</td>
+                <td class="route-col">Isla Barú<span class="transport">🏖️ Playa</span></td>
+                <td class="desc-col">Día completo de relax y playa caribeña en el sector de Isla Barú (Playa Blanca o Playa Tranquila).</td>
+                <td class="hotel-col">🏨 Soy Local Insignia</td>
+            </tr>
+            <tr>
+                <td class="date-col">Jue, 16 Jul</td>
+                <td class="route-col">Cartagena Colonial<span class="transport">🚶 Histórico</span></td>
+                <td class="desc-col">Visita guiada al Castillo de San Felipe y caminata por las calles llenas de flores de Getsemaní. Atardecer clásico sobre las murallas.</td>
+                <td class="hotel-col">🏨 Soy Local Insignia</td>
+            </tr>
+            <tr>
+                <td class="date-col">Vie, 17 Jul</td>
+                <td class="route-col">Islas del Rosario<span class="transport">🛥️ Lancha rápida</span></td>
+                <td class="desc-col">Excursión de día completo en lancha rápida por el archipiélago. Opciones de baño, snorkel en arrecifes y almuerzo local frente al mar.</td>
+                <td class="hotel-col">🏨 Soy Local Insignia</td>
+            </tr>
+            <tr>
+                <td class="date-col">Sáb, 18 Jul</td>
+                <td class="route-col">Cartagena Total<span class="transport">🚶 Libre</span></td>
+                <td class="desc-col">Último día libre para compras de artesanías en Las Bóvedas, fotografía sin prisa y disfrute de la gastronomía caribeña.</td>
+                <td class="hotel-col">🏨 Soy Local Insignia</td>
+            </tr>
+            <tr>
+                <td class="date-col">Dom, 19 Jul</td>
+                <td class="route-col">Cartagena ✈️ Bogotá<span class="transport">✈️ Vuelo Preventivo</span></td>
+                <td class="desc-col">Vuelo de regreso a Bogotá (12:17 - 13:50). Tarde libre y noche en la capital. Medida logística clave para evitar cancelaciones aéreas por clima antes del vuelo internacional de mañana.</td>
+                <td class="hotel-col">🏨 Hotel cercano al Aeropuerto El Dorado</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2 class="peru-title">Fase 2: Perú (20 al 30 de Julio)</h2>
+    <table class="peru-table">
+        <thead>
+            <tr>
+                <th>Día</th>
+                <th>Trayecto / Transporte</th>
+                <th>Descripción de la Actividad</th>
+                <th>Notas / Alojamiento</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="date-col">Lun, 20 Jul</td>
+                <td class="route-col">Ruta a los Andes<span class="transport">✈️ Vuelo Internacional + Interno</span></td>
+                <td class="desc-col">Vuelo Bogotá - Lima (11:55 - 15:00) y conexión Lima - Cusco (20:30 - 21:55). Llegada de noche, check-in, mate de coca y descanso obligatorio para combatir el mal de altura.</td>
+                <td class="hotel-col">🏨 Principe III<br><em>(Cercano a Wanchaq - Pagar allí)</em></td>
+            </tr>
+            <tr>
+                <td class="date-col">Mar, 21 Jul</td>
+                <td class="route-col">Cusco ➔ Aguas Calientes<span class="transport">🚂 Tren bimodal</span></td>
+                <td class="desc-col">Salida en servicio bimodal desde la estación de Wanchaq (12:30) hacia Ollantaytambo y tren final a Aguas Calientes (Llegada 17:02). Cena ligera e hidratación.</td>
+                <td class="hotel-col">🏨 Samananchis Machupicchu</td>
+            </tr>
+            <tr>
+                <td class="date-col">Mié, 22 Jul</td>
+                <td class="route-col">¡Machu Picchu!<span class="transport">⛰️ Santuario / 🚂 Tren</span></td>
+                <td class="desc-col">Acceso a la ciudadela inca a las 6:00 AM para disfrutar de las primeras luces del día. Almuerzo en el pueblo y tren de regreso por la tarde (15:20) hacia Ollantaytambo.</td>
+                <td class="hotel-col">🏨 Hostal Apu Qhawarina<br><em>(Ollantaytambo - Pagar allí)</em></td>
+            </tr>
+            <tr>
+                <td class="date-col">Jue, 23 Jul</td>
+                <td class="route-col">Valle Sagrado ➔ Cusco<span class="transport">🚗 Tour privado / Taxi</span></td>
+                <td class="desc-col">Ruta de exploración de las terrazas agrícolas de Moray y las espectaculares Salineras de Maras en vehículo privado, terminando el recorrido en Cusco.</td>
+                <td class="hotel-col">🏨 Principe III<br><em>(Cusco - Pagar allí)</em></td>
+            </tr>
+            <tr>
+                <td class="date-col">Vie, 24 Jul</td>
+                <td class="route-col">Cusco Imperial<span class="transport">🚶 A pie</span></td>
+                <td class="desc-col">Día completo para callejear sin prisa: Plaza de Armas, Piedra de los 12 Ángulos, Mercado de San Pedro y el bohemio barrio de San Blas.</td>
+                <td class="hotel-col">🏨 Principe III</td>
+            </tr>
+            <tr>
+                <td class="date-col">Sáb, 25 Jul</td>
+                <td class="route-col">Cusco (Libre)<span class="transport">🥾 Opción aventura</span></td>
+                <td class="desc-col">Día libre. Ventana perfecta para realizar el exigente trekking de madrugada a la Montaña de los Siete Colores (Vinicunca) o visitar la fortaleza de Sacsayhuamán.</td>
+                <td class="hotel-col">🏨 Principe III</td>
+            </tr>
+            <tr>
+                <td class="date-col">Dom, 26 Jul</td>
+                <td class="route-col">Cusco Completo<span class="transport">🚶 A pie</span></td>
+                <td class="desc-col">Día tranquilo de paseos, fotografías, últimas compras de artesanías y abrigos de alpaca, y disfrute de la gran cocina andina.</td>
+                <td class="hotel-col">🏨 Principe III</td>
+            </tr>
+            <tr>
+                <td class="date-col">Lun, 27 Jul</td>
+                <td class="route-col">Cusco ✈️ Lima<span class="transport">✈️ Vuelo interno</span></td>
+                <td class="desc-col">Vuelo matutino hacia la capital (11:40 - 13:20). Traslado al barrio costero de Miraflores. Tarde libre para asomarse al Pacífico y cenar en un buen restaurante limeño.</td>
+                <td class="hotel-col">🏨 La Casona Azul<br><em>(Miraflores - Pagar allí)</em></td>
+            </tr>
+            <tr>
+                <td class="date-col">Mar, 28 Jul</td>
+                <td class="route-col">Lima Gastronómica<span class="transport">🚶 Urbano</span></td>
+                <td class="desc-col">Día dedicado a conocer el Malecón de Miraflores, el centro comercial Larcomar excavado en el acantilado y el romántico barrio artístico de Barranco.</td>
+                <td class="hotel-col">🏨 La Casona Azul</td>
+            </tr>
+            <tr>
+                <td class="date-col">Mié, 29 Jul</td>
+                <td class="route-col">Lima ✈️ España<span class="transport">✈️ Vuelo Internacional</span></td>
+                <td class="desc-col">Últimas horas libres en Lima para las últimas compras. Traslado al aeropuerto a las 20:00 h para pasar controles e iniciar el vuelo transatlántico de vuelta (Salida 23:00).</td>
+                <td class="hotel-col">🏨 Noche a bordo</td>
+            </tr>
+            <tr>
+                <td class="date-col">Jue, 30 Jul</td>
+                <td class="route-col">Madrid ➔ Zaragoza<span class="transport">🚌 Autobús de línea</span></td>
+                <td class="desc-col">Aterrizaje en Madrid Barajas a las 17:20 h. Recogida de equipajes y enlace con el autobús de línea directa con destino Zaragoza (Horario: 21:00 - 00:50).</td>
+                <td class="hotel-col">🏠 ¡Fin del viaje!</td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+</html>
